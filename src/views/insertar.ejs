@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pastelería</title>
+    
+    <!-- Agrega las bibliotecas de jQuery y jQuery Mobile -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+    <div data-role="page" id="paginaPrincipal">
+
+        <div data-role="header" style="background-color: #5C94A1; color: #fff; border: none;">
+            <h1>Pastelería</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="/pasteles/inicio" data-icon="home">Inicio</a></li>
+                    <li><a href="/pasteles/agregar" data-icon="plus" class="ui-btn-active" style="text-decoration: none; color: #fff; font-weight: bold;">Insertar pastel</a></li>
+                    <li><a href="/pasteles/mostrar" data-icon="eye">Pasteles</a></li>
+                    <li><a href="/pasteles/edieli" data-icon="edit">Editar o eliminar</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="content" style="padding: 10px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); color: #333;">
+
+            <form action="/" method="POST" style="margin-top: 20px;">
+                <div data-role="fieldcontain">
+                    <input type="text" name="codigo" id="txt_codigo" placeholder="Código de pastel" style="padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <div data-role="fieldcontain">
+                    <input type="text" name="nombre" id="txt_nombre" placeholder="Nombre" style="padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <div data-role="fieldcontain">
+                    <input type="text" name="sabor" id="txt_sabor" placeholder="Sabor" style="padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <div data-role="fieldcontain">
+                    <input type="number" name="precio" id="txt_precio" placeholder="Precio" style="padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <div data-role="fieldcontain">
+                    <input type="number" name="costo" id="txt_costo" placeholder="Costo" style="padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <div data-role="fieldcontain">
+                    <input type="number" name="stock" id="txt_stock" placeholder="Existencias" style="padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <div data-role="fieldcontain">
+                    <input type="date" name="fechaProduccion" id="txt_fecha_produccion" placeholder="Fecha de producción" style="padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <div data-role="fieldcontain">
+                    <input type="date" name="fechaCaducidad" id="txt_fecha_caducidad" placeholder="Fecha de caducidad" style="padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                </div>
+                <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini" style="background-color: #5C94A1; color: #fff; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">Guardar</button>
+            </form>
+        </div>
+
+        <div data-role="footer" style="background-color: #5C94A1; color: #fff; text-align: center; padding: 10px;">
+            <h1>Pastelería "Zamy"</h1>
+            <h2>Los mejores pasteles de la región</h2>
+        </div>
+
+    </div>
+</body>
+</html>

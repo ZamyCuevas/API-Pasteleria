@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pastelería</title>
+    
+    <!-- Agrega las bibliotecas de jQuery y jQuery Mobile -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body style="font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #3498db;">
+
+    <div data-role="page" id="paginaPrincipal">
+
+        <div data-role="header" style="background-color: #5C94A1; color: #fff; border: none;">
+            <h1 style="margin: 0; padding: 10px 0;">Pastelería</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="/pasteles/inicio" data-icon="home" style="font-weight: bold;">Inicio</a></li>
+                    <li><a href="/pasteles/agregar" data-icon="plus" style="font-weight: bold;">Insertar Pastel</a></li>
+                    <li><a href="/pasteles/mostrar" data-icon="eye" class="ui-btn-active" style="font-weight: bold;">Pasteles</a></li>
+                    <li><a href="/pasteles/edieli" data-icon="edit" style="font-weight: bold;">Editar o Eliminar</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="content" style="margin-top: 20px; background-color: #fff; padding: 20px; border-radius: 15px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);">
+
+            <form>
+                <input data-type="search" id="searchForCollapsibleSet" placeholder="Buscar...">
+            </form>
+            
+            <div data-role="collapsibleset" data-filter="true" data-inset="true" id="collapsiblesetForFilter" data-input="#searchForCollapsibleSet" style="margin-top: 20px;">    
+                <% pasteles.forEach((pastel) => { %>
+                    <div data-role="collapsible" data-filtertext="<%= pastel.nombre %>" style="margin-bottom: 20px; border: 2px solid #ddd; border-radius: 10px; overflow: hidden;">
+                        <h3 style="background-color: #5C94A1; color: #fff; border-bottom: 2px solid #ddd; padding: 15px; margin: 0; font-size: 18px;"> <%= pastel.nombre %> </h3>
+                        <ul data-role="listview" data-inset="false" style="padding: 20px;">
+                            <li> Código: <%= pastel.codigo %> </li>
+                            <li> Sabor: <%= pastel.sabor %> </li>
+                            <li> Precio: <%= pastel.precio %> </li>
+                            <li> Costo: <%= pastel.costo %> </li>
+                            <li> Existencias: <%= pastel.stock %> </li>
+                            <li> Fecha de Producción: <%= pastel.fechaProduccion %> </li>
+                            <li> Fecha de Caducidad: <%= pastel.fechaCaducidad %> </li>
+                        </ul>
+                    </div>
+                <% }) %>
+            </div>
+
+            <a href="/pasteles/agregar" data-role="button" data-icon="plus" data-iconpos="right" class="ui-btn ui-btn-b ui-corner-all" style="font-weight: bold; font-size: 16px;">Agregar Pastel</a>
+        </div>
+
+        <div data-role="footer" style="background-color: #5C94A1; color: #fff; text-align: center; padding: 15px; font-size: 14px;">
+            <h1 style="margin: 0;">Pastelería "Zamy"</h1>
+            <h2 style="margin: 5px 0 0; font-weight: normal;">Los mejores pasteles de la región</h2>
+        </div>
+
+    </div>
+</body>
+</html>
